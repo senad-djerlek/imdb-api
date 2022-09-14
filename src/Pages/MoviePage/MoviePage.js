@@ -20,18 +20,7 @@ const MoviePage = () => {
       });
   }, []);
 
-  return (
-    <div className="contianer">
-      <Autocomplete
-        disablePortal
-        id="combo-box-demo"
-        options={movies}
-        sx={{ width: 300 }}
-        renderInput={(params) => <TextField {...params} label="Movie" />}
-      />
-      ;
-    </div>
-  );
+  return <div className="contianer"></div>;
 };
 
 export default MoviePage;
