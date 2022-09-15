@@ -2,8 +2,16 @@
   text-align: center;
 }
 
-.pagination {
-  position: absolute;
-  bottom: 10px;
-  left: 810px;
+.nav {
+  text-align: right;
+}
+.movie-series-btn {
+  text-decoration: none;
+  color: white;
+  margin: 15px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
 }

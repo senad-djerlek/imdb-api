@@ -6,21 +6,26 @@ import Autocomplete from "@mui/material/Autocomplete";
 import React from "react";
 
 const MoviePage = () => {
-  const [movies, setMovies] = useState([]);
+  // const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("https://imdb-api.com/en/API/Top250Movies/k_4vie09yd")
-      .then((res) => {
-        setMovies(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://imdb-api.com/en/API/Top250Movies/k_4vie09yd")
+  //     .then((res) => {
+  //       setMovies(res.data.items.splice(20, 30));
+  //       console.log(res.data.items.splice(20, 30));
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
-  return <div className="contianer"></div>;
+  return (
+    <div>
+      {" "}
+      <h1>Hi </h1>
+    </div>
+  );
 };
 
 export default MoviePage;
