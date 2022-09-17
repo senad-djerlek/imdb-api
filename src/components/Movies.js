@@ -13,6 +13,13 @@ const Movies = () => {
     setGetMovies(movies.results);
     console.log(getMovies);
   };
+  const numPages = Math.ceil(getMovies.length / 9);
+  const [page, setPage] = useState(1);
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
+  const moviesPerPage = 9;
+  const numberOfMoviesVistited = (page - 1) * moviesPerPage;
 
   // useEffect(() => {
   //   axios
@@ -34,7 +41,7 @@ const Movies = () => {
       <input
         className="input-movies"
         type="text"
-        placeholder="Search whatever you want"
+        placeholder="Search your movie"
         onChange={(event) => {
           setSearch(event.target.value);
         }}
@@ -53,6 +60,15 @@ const Movies = () => {
             <div className="title-movies">{movie.title}</div>
           </div>
         ))}
+      <div>
+        <Pagination
+          className="pagination"
+          count={numPages}
+          page={page}
+          onChange={handleChange}
+        />
+      </div>
+      
     </>
   );
 };

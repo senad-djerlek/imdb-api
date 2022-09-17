@@ -6,7 +6,7 @@ import { Routes, Route, NavLink } from "react-router-dom";
 import movies from "./movies.json";
 
 const NavBar = () => {
- 
+  
   return (
     <>
       <nav className="navBarColor">

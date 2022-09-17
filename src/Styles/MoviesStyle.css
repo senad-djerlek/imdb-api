@@ -11,13 +11,12 @@
   padding: 15px;
 }
 
-img:hover {
+/* img:hover {
   cursor: pointer;
   transition: 0.6s;
-
   width: 450px;
   height: 600px;
-}
+} */
 
 .input-movies {
   position: absolute;
@@ -31,4 +30,11 @@ img:hover {
   border-radius: 3px;
   border: 1px solid #fff;
   color: white;
+}
+.pagination {
+  margin-top: 40px;
+  background-color: white;
+  position: relative;
+  left: 680px;
+  margin-bottom: 2.5px;
 }
