@@ -2,11 +2,13 @@
   display: inline-grid;
 }
 
-.mapped img {
+/* .mapped img {
   width: 400px;
   gap: 50px;
+} */
+img {
+  width: 350px;
 }
-
 .title-movies {
   padding: 15px;
 }
@@ -32,9 +34,13 @@
   color: white;
 }
 .pagination {
+  display: flex;
+  justify-content: center;
   margin-top: 40px;
   background-color: white;
-  position: relative;
-  left: 680px;
   margin-bottom: 2.5px;
 }
+/* .pagination-movement {
+  display: flex;
+  align-items: center;
+} */

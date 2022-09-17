@@ -61,7 +61,7 @@ const Movies = () => {
           </div>
         ))
         .slice(numberOfMoviesVistited, numberOfMoviesVistited + moviesPerPage)}
-      <div>
+      <div className="pagination-movement">
         <Pagination
           className="pagination"
           count={numPages}

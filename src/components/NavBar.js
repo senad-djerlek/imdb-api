@@ -6,12 +6,11 @@ import { Routes, Route, NavLink } from "react-router-dom";
 import movies from "./movies.json";
 
 const NavBar = () => {
-  
   return (
     <>
       <nav className="navBarColor">
         <div className="nav-options">
-          <h1>Best Movies</h1>
+          <h1>MoviesPage</h1>
           <NavLink to="/">
             <span id="MoviesLight">Movies</span>
           </NavLink>
@@ -19,9 +18,7 @@ const NavBar = () => {
             <span id="MoviesLight">Tv Shows</span>
           </NavLink>
         </div>
-        <div className="input-group">
-          
-        </div>
+        <div className="input-group"></div>
       </nav>
       <Routes>
         <Route path="/" element={<Movies></Movies>} />
