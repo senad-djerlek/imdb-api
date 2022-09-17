@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../Styles/MoviesStyle.css";
 import tvshows from "./tvshows.json";
+import Pagination from "@mui/material/Pagination";
 
 const TvShows = () => {
   const [getTvShows, setGetTvShows] = useState([]);
@@ -12,6 +13,13 @@ const TvShows = () => {
   useEffect(() => {
     showsGet();
   }, []);
+  const numPages = Math.ceil(getTvShows.length / 9);
+  const [page, setPage] = useState(1);
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
+  const moviesPerPage = 9;
+  const numberOfMoviesVistited = (page - 1) * moviesPerPage;
   return (
     <>
       <input
@@ -35,7 +43,16 @@ const TvShows = () => {
             <img src={tvs.image}></img>
             <div className="title-movies">{tvs.title}</div>
           </div>
-        ))}
+        ))
+        .slice(numberOfMoviesVistited, numberOfMoviesVistited + moviesPerPage)}
+      <div>
+        <Pagination
+          className="pagination"
+          count={numPages}
+          page={page}
+          onChange={handleChange}
+        />
+      </div>
     </>
   );
 };

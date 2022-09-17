@@ -59,7 +59,8 @@ const Movies = () => {
             <img src={movie.image}></img>
             <div className="title-movies">{movie.title}</div>
           </div>
-        ))}
+        ))
+        .slice(numberOfMoviesVistited, numberOfMoviesVistited + moviesPerPage)}
       <div>
         <Pagination
           className="pagination"
@@ -68,7 +69,6 @@ const Movies = () => {
           onChange={handleChange}
         />
       </div>
-      
     </>
   );
 };
