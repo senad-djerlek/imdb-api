@@ -5,15 +5,16 @@ import Autocomplete from "@mui/material/Autocomplete";
 import "../Styles/MoviesStyle.css";
 import movies from "./movies.json";
 import Pagination from "@mui/material/Pagination";
-
+import { useNavigate } from "react-router-dom";
 const Movies = () => {
   const [getMovies, setGetMovies] = useState([]);
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
   const moviesGet = () => {
     setGetMovies(movies.results);
     console.log(getMovies);
   };
-  const numPages = Math.ceil(getMovies.length / 9);
+  const numPages = Math.ceil(getMovies.length / 20);
   const [page, setPage] = useState(1);
   const handleChange = (event, value) => {
     setPage(value);
@@ -55,9 +56,24 @@ const Movies = () => {
           }
         })
         .map((movie) => (
-          <div className="mapped" key={movie.id}>
+          <div
+            className="mapped"
+            key={movie.id}
+            onClick={() => {
+              navigate(`${movie.id}`, {
+                state: {
+                  id: movie.id,
+                  description: movie.description,
+                  image: movie.image,
+                  title: movie.title,
+                },
+              });
+            }}
+          >
             <img src={movie.image}></img>
-            <div className="title-movies">{movie.title}</div>
+            <div className="title-movies">
+              {movie.title} <br></br> {movie.description}
+            </div>
           </div>
         ))
         .slice(numberOfMoviesVistited, numberOfMoviesVistited + moviesPerPage)}

@@ -13,7 +13,7 @@ const TvShows = () => {
   useEffect(() => {
     showsGet();
   }, []);
-  const numPages = Math.ceil(getTvShows.length / 9);
+  const numPages = Math.ceil(getTvShows.length / 12);
   const [page, setPage] = useState(1);
   const handleChange = (event, value) => {
     setPage(value);

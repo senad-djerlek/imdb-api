@@ -4,6 +4,7 @@ import Movies from "./Movies";
 import TvShows from "./TvShows";
 import { Routes, Route, NavLink } from "react-router-dom";
 import movies from "./movies.json";
+import MoviesInfo from "./MoviesInfo";
 
 const NavBar = () => {
   return (
@@ -23,6 +24,7 @@ const NavBar = () => {
       <Routes>
         <Route path="/" element={<Movies></Movies>} />
         <Route path="/TvShows" element={<TvShows></TvShows>} />
+        <Route path="/:id" element={<MoviesInfo></MoviesInfo>} />
       </Routes>
     </>
   );

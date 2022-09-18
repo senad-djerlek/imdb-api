@@ -1,0 +1,12 @@
+.movie-info-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img {
+  margin-top: 5px;
+}
+.title-description {
+  background-color: blue;
+  margin-left: 5px;
+}

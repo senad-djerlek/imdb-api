@@ -1,5 +1,6 @@
 .mapped {
   display: inline-grid;
+  /* display: inline-grid; */
 }
 
 /* .mapped img {
@@ -11,6 +12,7 @@ img {
 }
 .title-movies {
   padding: 15px;
+  background-color: blue;
 }
 
 /* img:hover {
@@ -37,8 +39,9 @@ img {
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  margin-bottom: 10px;
   background-color: white;
-  margin-bottom: 2.5px;
+  /* margin-bottom: 2.5px; */
 }
 /* .pagination-movement {
   display: flex;

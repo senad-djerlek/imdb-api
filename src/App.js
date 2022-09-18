@@ -10,7 +10,7 @@ const App = () => {
       <div className="App">
         <NavBar />
         <footer className="footer">
-          <p>Senad's website Ⓒ</p>
+          <h2>Senad's Movie Website Ⓒ</h2>
         </footer>
       </div>
     </>
