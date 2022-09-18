@@ -1,0 +1,21 @@
+.movie-page {
+  overflow: auto;
+}
+.movie-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.pagination-movement {
+  background-color: red;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 10vh;
+  background-color: white;
+}

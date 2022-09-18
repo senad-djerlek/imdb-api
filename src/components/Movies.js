@@ -10,11 +10,12 @@ const Movies = () => {
   const [getMovies, setGetMovies] = useState([]);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
+
   const moviesGet = () => {
     setGetMovies(movies.results);
     console.log(getMovies);
   };
-  const numPages = Math.ceil(getMovies.length / 20);
+  const numPages = Math.ceil(getMovies.length / 10);
   const [page, setPage] = useState(1);
   const handleChange = (event, value) => {
     setPage(value);
@@ -49,12 +50,13 @@ const Movies = () => {
       />
       {getMovies
         .filter((el) => {
-          if (search == "") {
+          if (search === "") {
             return el;
           } else if (el.title.toLowerCase().includes(search.toLowerCase())) {
             return el;
           }
         })
+        .slice(numberOfMoviesVistited, numberOfMoviesVistited + moviesPerPage)
         .map((movie) => (
           <div
             className="mapped"
@@ -75,8 +77,7 @@ const Movies = () => {
               {movie.title} <br></br> {movie.description}
             </div>
           </div>
-        ))
-        .slice(numberOfMoviesVistited, numberOfMoviesVistited + moviesPerPage)}
+        ))}
       <div className="pagination-movement">
         <Pagination
           className="pagination"

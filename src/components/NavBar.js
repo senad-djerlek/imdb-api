@@ -11,21 +11,15 @@ const NavBar = () => {
     <>
       <nav className="navBarColor">
         <div className="nav-options">
-          <h1>MoviesPage</h1>
           <NavLink to="/">
-            <span id="MoviesLight">Movies</span>
+            <h1>MoviesPage</h1>
           </NavLink>
-          <NavLink to="/TvShows">
+          <NavLink to="/tv-shows">
             <span id="MoviesLight">Tv Shows</span>
           </NavLink>
         </div>
-        <div className="input-group"></div>
+        {/* <div className="input-group"></div> */}
       </nav>
-      <Routes>
-        <Route path="/" element={<Movies></Movies>} />
-        <Route path="/TvShows" element={<TvShows></TvShows>} />
-        <Route path="/:id" element={<MoviesInfo></MoviesInfo>} />
-      </Routes>
     </>
   );
 };

@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import "../Styles/MoviesStyle.css";
 import tvshows from "./tvshows.json";
 import Pagination from "@mui/material/Pagination";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const TvShows = () => {
   const [getTvShows, setGetTvShows] = useState([]);
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
   const showsGet = () => {
-    setGetTvShows(tvshows.results);
+  setGetTvShows(tvshows.results);
     console.log(getTvShows);
   };
   useEffect(() => {
@@ -39,7 +41,20 @@ const TvShows = () => {
           }
         })
         .map((tvs) => (
-          <div className="mapped" key={tvs.id}>
+          <div
+            className="mapped"
+            key={tvs.id}
+            onClick={() => {
+              navigate(`${tvs.id}`, {
+                state: {
+                  id: tvs.id,
+                  description: tvs.description,
+                  image: tvs.image,
+                  title: tvs.title,
+                },
+              });
+            }}
+          >
             <img src={tvs.image}></img>
             <div className="title-movies">{tvs.title}</div>
           </div>

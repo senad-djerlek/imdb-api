@@ -4,9 +4,12 @@
   justify-content: center;
 }
 .img {
-  margin-top: 5px;
+  margin-top: 10vh;
 }
 .title-description {
-  background-color: blue;
+  /* background-color: blue; */
   margin-left: 5px;
+  font-style: italic;
+  font-weight: bold;
+  font-size: large;
 }

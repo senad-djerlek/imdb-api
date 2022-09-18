@@ -2,13 +2,11 @@
   text-align: center;
 }
 .footer {
-  /* position: fixed;
+  position: fixed;
   bottom: 0;
-  left: 0; */
-  /* width: 100%; */
-  /* margin-top: 250px; */
+  width: 100%;
   padding: 10px;
-  height: 8vh;
+  height: 5vh;
   background-color: #001219;
   color: white;
 }
