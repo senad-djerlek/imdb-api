@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Styles/NavBarStyle.css";
-import Movies from "./Movies";
-import TvShows from "./TvShows";
-import { Routes, Route, NavLink } from "react-router-dom";
-import movies from "./movies.json";
-import MoviesInfo from "./MoviesInfo";
+
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (

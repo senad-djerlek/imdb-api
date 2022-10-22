@@ -2,18 +2,19 @@ import React, { useState, useEffect } from "react";
 import "../Styles/MoviesStyle.css";
 import tvshows from "./tvshows.json";
 import Pagination from "@mui/material/Pagination";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const TvShows = () => {
   const [getTvShows, setGetTvShows] = useState([]);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
   const showsGet = () => {
-  setGetTvShows(tvshows.results);
+    setGetTvShows(tvshows.results);
     console.log(getTvShows);
   };
   useEffect(() => {
     showsGet();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const numPages = Math.ceil(getTvShows.length / 12);
   const [page, setPage] = useState(1);
@@ -34,10 +35,12 @@ const TvShows = () => {
       />
       {getTvShows
         .filter((el) => {
-          if (search == "") {
+          if (search === "") {
             return el;
           } else if (el.title.toLowerCase().includes(search.toLowerCase())) {
             return el;
+          } else {
+            return;
           }
         })
         .map((tvs) => (
@@ -55,7 +58,7 @@ const TvShows = () => {
               });
             }}
           >
-            <img src={tvs.image}></img>
+            <img src={tvs.image} alt="tv-show"></img>
             <div className="title-movies">{tvs.title}</div>
           </div>
         ))

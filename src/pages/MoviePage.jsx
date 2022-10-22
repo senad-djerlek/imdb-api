@@ -1,5 +1,4 @@
 import { Pagination } from "@mui/material";
-import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import MovieCard from "../components/MovieCard";
@@ -10,7 +9,6 @@ const MoviePage = ({ category }) => {
   const [moviesArr, setMoviesArr] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [movieFilter, setMovieFilter] = useState("");
-  const numPages = Math.ceil(moviesArr.length / 10);
   const moviesPerPage = 9;
 
   const handleChange = (_, value) => {
@@ -33,6 +31,8 @@ const MoviePage = ({ category }) => {
         movies.results.filter((m) => {
           if (m.title.toLowerCase().includes(e.target.value.toLowerCase())) {
             return m;
+          } else {
+            return;
           }
         })
       );

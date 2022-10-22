@@ -1,7 +1,5 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
+
 import "../Styles/MoviesStyle.css";
 import movies from "./movies.json";
 import Pagination from "@mui/material/Pagination";
@@ -38,6 +36,8 @@ const Movies = () => {
   useEffect(() => {
     moviesGet();
   }, []);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   return (
     <>
       <input
@@ -54,6 +54,8 @@ const Movies = () => {
             return el;
           } else if (el.title.toLowerCase().includes(search.toLowerCase())) {
             return el;
+          } else {
+            return;
           }
         })
         .slice(numberOfMoviesVistited, numberOfMoviesVistited + moviesPerPage)
@@ -72,7 +74,7 @@ const Movies = () => {
               });
             }}
           >
-            <img src={movie.image}></img>
+            <img src={movie.image} alt="movie-banner"></img>
             <div className="title-movies">
               {movie.title} <br></br> {movie.description}
             </div>

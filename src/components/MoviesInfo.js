@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "../Styles/MovieInfoPage.css";
 
 import movies from "./movies.json";
@@ -16,11 +16,12 @@ const MoviesInfo = () => {
   //   const image = state.image;
   useEffect(() => {
     getMovieById();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="movie-info-page">
       <div className="img">
-        <img src={movie.image}></img>
+        <img src={movie.image} alt="movies"></img>
       </div>
       <div className="title-description">
         {movie.title}
