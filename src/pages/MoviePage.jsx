@@ -31,9 +31,7 @@ const MoviePage = ({ category }) => {
         movies.results.filter((m) => {
           if (m.title.toLowerCase().includes(e.target.value.toLowerCase())) {
             return m;
-          } else {
-            return;
-          }
+          } 
         })
       );
     });
