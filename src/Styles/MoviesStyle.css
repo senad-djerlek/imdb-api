@@ -19,7 +19,7 @@ img {
 
 img:hover {
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.1s;
   transform: scale(1.1);
 }
 
