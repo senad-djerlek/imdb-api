@@ -1,4 +1,5 @@
 import { Pagination } from "@mui/material";
+
 import React, { useState } from "react";
 import { useEffect } from "react";
 import MovieCard from "../components/MovieCard";
@@ -30,8 +31,6 @@ const MoviePage = ({ category }) => {
       setMoviesArr(
         movies.results.filter((m) => {
           if (m.title.toLowerCase().includes(e.target.value.toLowerCase())) {
-            return m;
-          } else {
             return m;
           }
         })

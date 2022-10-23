@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import "../Styles/MoviesStyle.css";
 const MovieCard = ({ movie }) => {
   const navigate = useNavigate();
   return (
@@ -9,8 +9,10 @@ const MovieCard = ({ movie }) => {
         navigate(`${movie.id}`);
       }}
     >
-      <img src={movie.image} alt="" />
-      <h3>{movie.title}</h3>
+      <div>
+        <img src={movie.image} alt="film" />
+        <h3>{movie.title}</h3>
+      </div>
     </div>
   );
 };
